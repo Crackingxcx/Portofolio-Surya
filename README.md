@@ -27,17 +27,16 @@
   <section>
     <h2>Skills & Interest</h2>
     <ul>
+      <li>Mikrotik Konfigurasi dan FTTH</li>
       <li>Pemrograman dasar & microcontroller (Arduino, ESP32)</li>
-      <li>Tampilan UI/UX sederhana</li>
-      <li>Teknologi IoT & AI Assistant</li>
+      <li>Pemrograman Website tingkat dasar</li>
     </ul>
   </section>
 
   <section>
     <h2>Kontak</h2>
-    <p><b>Nama:</b> Surya</p>
+    <p><b>Nama:</b> Fadhil Surya Permadi</p>
     <p><b>Sekolah:</b> SMK Ketintang Surabaya</p>
-    <p><b>GitHub:</b> <a href="#">(isi dengan link GitHub kamu)</a></p>
   </section>
 
   <footer>
