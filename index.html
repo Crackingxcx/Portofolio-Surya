@@ -185,8 +185,8 @@
         <h1 class="title">HELLO — Im <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Fadhil Surya Permadi</span></h1>
         <p class="subtitle">Student SMKS KETINTANG SURABAYA </p>
         <div class="hero-cta">
-          <a class="btn primary" href="#projects"><i class="ri-flashlight-line"></i> Lihat Project</a>
-          <a class="btn" href="#contact"><i class="ri-message-3-line"></i> Hubungi Saya</a>
+          <a class="btn primary" href="#projects"><i class="ri-flashlight-line"></i> My Project</a>
+          <a class="btn" href="#contact"><i class="ri-message-3-line"></i> Contact Me</a>
         </div>
         <div class="stat">
           <div class="kpi"><b>IT Network</b><div>Portofolio</div></div>
@@ -213,7 +213,7 @@
     <div class="section-head">
       <div>
         <div class="eyebrow">Profile</div>
-        <h2>Ringkasan</h2>
+        <h2>Summary</h2>
       </div>
       <span class="chip"><i class="ri-user-3-line"></i> PROFILE</span>
     </div>
@@ -237,7 +237,7 @@
       <div class="tl-item">
         <b>SMK Ketintang Surabaya</b>
         <div class="muted">Teknik Komputer & Jaringan • 2022 – 2025</div>
-        <p class="muted">Kegiatan dan masyarakat: Photography and Videography JournalistKegiatan dan masyarakat: Photography and Videography Journalist</p>
+        <p class="muted">Activities and society: Photography and Videography Journalist</p>
         <p class="muted"></p>A student at SMK Ketintang Surabaya majoring in Computer and Network Engineering (TKJ), I firmly believe this field is the best place to develop. I actively participate in various national-level competitions, honing my technical and mental skills to compete.
         <p class="muted">These experiences have not only enriched my knowledge but also demonstrated my dedication and ability to apply my TKJ knowledge in the real world. I am passionate about continuing to learn and contribute to the technology industry.</p>
       </div>
@@ -249,7 +249,7 @@
     <div class="section-head">
       <div>
         <div class="eyebrow">Skill</div>
-        <h2>Keahlian Utama</h2>
+        <h2>Keahlihan Utama</h2>
       </div>
       <span class="chip"><i class="ri-tools-line"></i> SKILL</span>
     </div>
@@ -362,22 +362,22 @@
       <span class="chip"><i class="ri-send-plane-2-line"></i> CONTACT</span>
     </div>
     <div class="contact">
-      <form class="card" onsubmit="submitForm(event)">
-        <div class="field">
-          <label for="name">Nama</label>
-          <input id="name" name="name" placeholder="Nama kamu" required>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="email@kamu.com" required>
-        </div>
-        <div class="field">
-          <label for="message">Pesan</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tulis pesan singkat…" required></textarea>
-        </div>
-        <button class="btn primary" type="submit"><i class="ri-send-plane-line"></i> Kirim</button>
-        <p id="formStatus" class="muted" style="margin-top:10px"></p>
-      </form>
+    <form class="card" onsubmit="submitForm(event)" action="https://formspree.io/f/mpwjadad" method="POST">
+  <div class="field">
+    <label for="name">Nama</label>
+    <input id="name" name="name" placeholder="Nama kamu" required>
+  </div>
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" placeholder="email@kamu.com" required>
+  </div>
+  <div class="field">
+    <label for="message">Pesan</label>
+    <textarea id="message" name="message" rows="5" placeholder="Tulis pesan singkat…" required></textarea>
+  </div>
+  <button class="btn primary" type="submit"><i class="ri-send-plane-line"></i> Kirim</button>
+  <p id="formStatus" class="muted" style="margin-top:10px"></p>
+</form>
       <div class="card info">
         <div class="row"><i class="ri-phone-line"></i> <b>085187727060</b></div>
         <div class="row"><i class="ri-mail-line"></i> <a href="mailto:fadhilsuryap00@gmail.com">fadhilsuryap00@gmail.com</a></div>
@@ -434,15 +434,37 @@
     },{threshold:.14});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Dummy form handler (front-end only)
-    function submitForm(ev){
-      ev.preventDefault();
-      const form = ev.currentTarget;
-      const data = Object.fromEntries(new FormData(form).entries());
-      const out = `Terima kasih, ${data.name}! Pesan kamu sudah tercatat. (Demo front-end)`;
-      document.getElementById('formStatus').textContent = out;
+    // FORM CONTAC ME
+async function submitForm(event) {
+  event.preventDefault(); // cegah reload halaman
+  const form = event.target;
+  const status = document.getElementById("formStatus");
+
+  status.innerHTML = "⏳ Sedang mengirim...";
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.innerHTML = "✅ Pesan berhasil dikirim!";
       form.reset();
+    } else {
+      const data = await response.json();
+      if (data.errors) {
+        status.innerHTML = "❌ " + data.errors.map(e => e.message).join(", ");
+      } else {
+        status.innerHTML = "❌ Gagal mengirim pesan. Coba lagi.";
+      }
     }
+  } catch (error) {
+    status.innerHTML = "⚠️ Terjadi kesalahan. Periksa koneksi internet.";
+  }
+}
   </script>
 </body>
 </html>
+
