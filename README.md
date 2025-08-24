@@ -21,7 +21,6 @@
       <li>Mencari relasi & koneksi di bidang teknologi</li>
       <li>Meningkatkan keterampilan melalui pembelajaran terbuka</li>
     </ul>
-    <blockquote><i>Catatan: Repository ini hanya berisi tampilan saja, bukan aplikasi jadi.</i></blockquote>
   </section>
 
   <section>
