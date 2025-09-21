@@ -397,6 +397,8 @@
   </footer>
 
   <script>
+    //Nonactive click right
+    document.addEventListener('contextmenu', event => event.preventDefault());
     // Set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -469,6 +471,7 @@ async function submitForm(event) {
   </script>
 </body>
 </html>
+
 
 
 
