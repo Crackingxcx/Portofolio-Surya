@@ -397,80 +397,11 @@
   </footer>
 
   <script>
-    //Nonactive click right
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    // Set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu toggle
-    const hamb = document.getElementById('hamb');
-    const mobile = document.getElementById('mobileLinks');
-    hamb.addEventListener('click', () => mobile.classList.toggle('hide'));
-
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('#mobileLinks a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobile.classList.add('hide');
-      });
-    });
-
-    // Active link on scroll (simple scrollspy)
-    const sections = ['profile','education','skills','experience','projects','achievement','contact'];
-    const navLinks = [...document.querySelectorAll('#links a'), ...document.querySelectorAll('#mobileLinks a')];
-    const setActive = () => {
-      let current = null;
-      sections.forEach(id => {
-        const el = document.getElementById(id);
-        if(!el) return;
-        const rect = el.getBoundingClientRect();
-        if(rect.top <= 120 && rect.bottom >= 120) current = id;
-      });
-      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${current}`));
-    };
-    window.addEventListener('scroll', setActive);
-    setActive();
-
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} 
-      });
-    },{threshold:.14});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    // FORM CONTAC ME
-async function submitForm(event) {
-  event.preventDefault(); // cegah reload halaman
-  const form = event.target;
-  const status = document.getElementById("formStatus");
-
-  status.innerHTML = "⏳ Sedang mengirim...";
-
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      status.innerHTML = "✅ Pesan berhasil dikirim!";
-      form.reset();
-    } else {
-      const data = await response.json();
-      if (data.errors) {
-        status.innerHTML = "❌ " + data.errors.map(e => e.message).join(", ");
-      } else {
-        status.innerHTML = "❌ Gagal mengirim pesan. Coba lagi.";
-      }
-    }
-  } catch (error) {
-    status.innerHTML = "⚠️ Terjadi kesalahan. Periksa koneksi internet.";
-  }
-}
+const _0x55517f=_0x5024;(function(_0x315d12,_0x321e34){const _0x22c019=_0x5024,_0x326bb3=_0x315d12();while(!![]){try{const _0x4abcb4=-parseInt(_0x22c019(0xcf))/0x1*(-parseInt(_0x22c019(0xe0))/0x2)+parseInt(_0x22c019(0xd2))/0x3+parseInt(_0x22c019(0xd8))/0x4+-parseInt(_0x22c019(0xe6))/0x5+-parseInt(_0x22c019(0xea))/0x6+parseInt(_0x22c019(0xee))/0x7+-parseInt(_0x22c019(0xcd))/0x8;if(_0x4abcb4===_0x321e34)break;else _0x326bb3['push'](_0x326bb3['shift']());}catch(_0x2958dc){_0x326bb3['push'](_0x326bb3['shift']());}}}(_0x2117,0x491e3),document['addEventListener']('contextmenu',_0x433411=>_0x433411[_0x55517f(0xe9)]()),document['getElementById'](_0x55517f(0xde))[_0x55517f(0xf2)]=new Date()['getFullYear']());const hamb=document[_0x55517f(0xc6)]('hamb'),mobile=document[_0x55517f(0xc6)](_0x55517f(0xc4));function _0x5024(_0x5e1602,_0x3ddd59){const _0x21179a=_0x2117();return _0x5024=function(_0x502439,_0x10dc79){_0x502439=_0x502439-0xc4;let _0xc4143e=_0x21179a[_0x502439];return _0xc4143e;},_0x5024(_0x5e1602,_0x3ddd59);}hamb['addEventListener'](_0x55517f(0xda),()=>mobile[_0x55517f(0xe1)][_0x55517f(0xef)](_0x55517f(0xe5))),document[_0x55517f(0xce)](_0x55517f(0xdc))['forEach'](_0x27c53d=>{const _0x3dd96a=_0x55517f;_0x27c53d[_0x3dd96a(0xdb)]('click',()=>{const _0x123718=_0x3dd96a;mobile[_0x123718(0xe1)][_0x123718(0xec)](_0x123718(0xe5));});});const sections=['profile',_0x55517f(0xf0),_0x55517f(0xeb),_0x55517f(0xdf),'projects',_0x55517f(0xf3),_0x55517f(0xe7)],navLinks=[...document['querySelectorAll'](_0x55517f(0xcc)),...document[_0x55517f(0xce)](_0x55517f(0xdc))],setActive=()=>{const _0x18440d=_0x55517f;let _0x2a1cc2=null;sections['forEach'](_0x18f335=>{const _0x87fa57=_0x5024,_0x2713b2=document['getElementById'](_0x18f335);if(!_0x2713b2)return;const _0x4b8be2=_0x2713b2[_0x87fa57(0xe8)]();if(_0x4b8be2[_0x87fa57(0xc9)]<=0x78&&_0x4b8be2['bottom']>=0x78)_0x2a1cc2=_0x18f335;}),navLinks[_0x18440d(0xc8)](_0x20021d=>_0x20021d[_0x18440d(0xe1)][_0x18440d(0xef)](_0x18440d(0xd9),_0x20021d[_0x18440d(0xd0)](_0x18440d(0xd4))==='#'+_0x2a1cc2));};window[_0x55517f(0xdb)](_0x55517f(0xd7),setActive),setActive();const io=new IntersectionObserver(_0x36977e=>{const _0x1a7732=_0x55517f;_0x36977e[_0x1a7732(0xc8)](_0x5de1ed=>{const _0x65c7fa=_0x1a7732;_0x5de1ed['isIntersecting']&&(_0x5de1ed[_0x65c7fa(0xcb)][_0x65c7fa(0xe1)][_0x65c7fa(0xec)]('in'),io[_0x65c7fa(0xe4)](_0x5de1ed[_0x65c7fa(0xcb)]));});},{'threshold':0.14});document[_0x55517f(0xce)](_0x55517f(0xc7))[_0x55517f(0xc8)](_0x516f31=>io['observe'](_0x516f31));async function submitForm(_0x4733c9){const _0xbec309=_0x55517f;_0x4733c9[_0xbec309(0xe9)]();const _0x48f9fc=_0x4733c9[_0xbec309(0xcb)],_0xa7fc8a=document[_0xbec309(0xc6)](_0xbec309(0xf1));_0xa7fc8a[_0xbec309(0xed)]=_0xbec309(0xd6);try{const _0x41025b=await fetch(_0x48f9fc[_0xbec309(0xd1)],{'method':_0x48f9fc['method'],'body':new FormData(_0x48f9fc),'headers':{'Accept':'application/json'}});if(_0x41025b['ok'])_0xa7fc8a[_0xbec309(0xed)]=_0xbec309(0xe2),_0x48f9fc[_0xbec309(0xc5)]();else{const _0x1e0c4f=await _0x41025b[_0xbec309(0xd3)]();_0x1e0c4f[_0xbec309(0xe3)]?_0xa7fc8a[_0xbec309(0xed)]='❌\x20'+_0x1e0c4f[_0xbec309(0xe3)]['map'](_0x3af01e=>_0x3af01e[_0xbec309(0xca)])['join'](',\x20'):_0xa7fc8a[_0xbec309(0xed)]=_0xbec309(0xdd);}}catch(_0x58800e){_0xa7fc8a[_0xbec309(0xed)]=_0xbec309(0xd5);}}function _0x2117(){const _0x441fdf=['textContent','achievement','mobileLinks','reset','getElementById','.reveal','forEach','top','message','target','#links\x20a','2133616ACaXtr','querySelectorAll','44431bhMuLp','getAttribute','action','352305PxxDru','json','href','⚠️\x20Terjadi\x20kesalahan.\x20Periksa\x20koneksi\x20internet.','⏳\x20Sedang\x20mengirim...','scroll','2349208WDnBwR','active','click','addEventListener','#mobileLinks\x20a','❌\x20Gagal\x20mengirim\x20pesan.\x20Coba\x20lagi.','year','experience','14gTssiE','classList','✅\x20Pesan\x20berhasil\x20dikirim!','errors','unobserve','hide','1330790VapCxb','contact','getBoundingClientRect','preventDefault','3256038GbKBAW','skills','add','innerHTML','2514890mpKFEX','toggle','education','formStatus'];_0x2117=function(){return _0x441fdf;};return _0x2117();}
   </script>
 </body>
 </html>
+
 
 
 
