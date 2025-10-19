@@ -217,9 +217,139 @@
 .read-more-btn:hover {
   text-decoration: underline;
 }
+
+/* === ADVANCED LOADING SCREEN === */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Background Grid effect */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                    linear-gradient(rgba(138, 92, 246, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+.loader-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Glowing logo */
+.logo-glow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(0,212,255,0.1), transparent 70%);
+  border: 2px solid rgba(0, 212, 255, 0.2);
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 24px;
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.logo-glow .fs {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--brand-2);
+  text-shadow: 0 0 20px var(--brand-2), 0 0 40px var(--brand);
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 25px rgba(0, 212, 255, 0.3); }
+  50% { box-shadow: 0 0 55px rgba(138, 92, 246, 0.6); }
+}
+
+/* Pulse network rings */
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--brand-2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: pulseRing 2.5s ease-out infinite;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 10px var(--brand-2));
+}
+
+.pulse-ring.delay {
+  animation-delay: 1.2s;
+  border-color: var(--brand);
+  filter: drop-shadow(0 0 10px var(--brand));
+}
+
+@keyframes pulseRing {
+  0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0.8; }
+  70% { opacity: 0.4; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+/* Loading text */
+.loading-text {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--brand-2);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--brand-2);
+  animation: textBlink 1.5s infinite;
+  margin-top: 16px;
+}
+
+@keyframes textBlink {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+    
   </style>
 </head>
 <body>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="grid-bg"></div>
+
+  <div class="loader-content">
+    <div class="pulse-ring"></div>
+    <div class="pulse-ring delay"></div>
+
+    <div class="logo-glow">
+      <span class="fs">FS</span>
+    </div>
+
+    <p class="loading-text">BOOTING NETWORK SYSTEM...</p>
+  </div>
+</div>
 
 <!-- NAVIGATION -->
 <div class="nav-wrap" style="position:fixed; top:0; left:0; right:0; z-index:100;">
@@ -519,6 +649,16 @@
   </footer>
 
 <script type="module">
+
+  // === Loading Screen Animation ===
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loading-screen");
+  setTimeout(() => {
+    loader.classList.add("hidden");
+  }, 2000); // tampil 2 detik
+});
+
+  
   // Nonaktifkan klik kanan
   document.addEventListener('contextmenu', e => e.preventDefault());
 
@@ -635,6 +775,7 @@
 
 </body>
 </html>
+
 
 
 
