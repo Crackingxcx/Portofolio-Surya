@@ -35,6 +35,7 @@
   <section>
     <h2>Kontak</h2>
     <p><b>Nama:</b> Fadhil Surya Permadi</p>
+    <p><b>Jurusan:</b> Teknik Komputer dan Jaringan (TKJ)</p>
     <p><b>Sekolah:</b> SMK Ketintang Surabaya</p>
   </section>
 
