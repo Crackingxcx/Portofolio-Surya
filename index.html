@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fadhil Surya Permadi – Portfolio</title>
+  <meta name="description" content="IT Network portfolio – Fadhil Surya Permadi">
+  <link rel="icon" type="image/x-icon" href="ASSETS/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="portofoliofs.css">
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen">
+    <div class="grid-bg"></div>
+
+    <div class="loader-content">
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring delay"></div>
+
+      <div class="logo-glow">
+        <span class="fs">FS</span>
+      </div>
+
+      <p class="loading-text">BOOTING NETWORK SYSTEM...</p>
+    </div>
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <div class="nav-wrap" style="position:fixed; top:0; left:0; right:0; z-index:100;">
+    <nav>
+      <a class="brand" href="#start" aria-label="Kembali ke Start">
+        <div class="logo">FS</div>
+        <span>PORTOFOLIO • IT NETWORK</span>
+      </a>
+
+      <!-- MENU untuk desktop -->
+      <div class="links" id="links">
+        <a href="#profile">Profile</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skill</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Project</a>
+        <a href="#Certification">Certification</a>
+        <a href="#achievement">Achievement</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <!-- Tombol hamburger untuk mobile -->
+      <button class="hamb" id="hamb" aria-label="Toggle menu" type="button">
+        <i class="ri-menu-4-line"></i><span>Menu</span>
+      </button>
+    </nav>
+
+    <!-- MENU untuk mobile -->
+    <div class="links mobile hide" id="mobileLinks">
+      <a href="#profile">Profile</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skill</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Project</a>
+      <a href="#Certification">Certification</a>
+      <a href="#achievement">Achievement</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+
+  <!-- HERO / START -->
+  <header class="hero" id="start">
+    <div class="spline-container">
+      <canvas id="canvas3d"></canvas>
+    </div>
+    <div class="hero-inner">
+      <div class="">
+        <span class="chip"><i class="ri-rocket-2-line"></i> START</span>
+        <h1 class="title">
+          HELLO — I'm
+          <span
+            style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">
+            Fadhil Surya Permadi
+          </span>
+        </h1>
+        <p class="subtitle">Aspiring Network Operations Center</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#projects"><i class="ri-flashlight-line"></i> My Project</a>
+          <a class="btn" href="#contact"><i class="ri-message-3-line"></i> Contact Me</a>
+        </div>
+        <div class="music-container loading">
+          <div class="music-switch">
+            <i class="ri-sound-module-line music-icon"></i>
+            <input type="checkbox" id="musicSwitch" checked>
+            <label for="musicSwitch" class="switch-btn">
+              <div class="switch-dot"></div>
+            </label>
+          </div>
+          <audio id="bgMusic" loop autoplay>
+            <source src="ASSETS/song website portofolio.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROFILE -->
+  <section id="profile" class="reveal profile">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Profile</div>
+        <h2>Ringkasan</h2>
+      </div>
+      <span class="chip"><i class="ri-user-3-line"></i> PROFILE</span>
+    </div>
+    <div class="card">
+      <p>Hello, my name is Fadhil Surya Permadi, but I'm usually called Surya. I'm currently a student at SMK Ketintang
+        Surabaya, majoring in Computer and Network Engineering (TKJ).</p>
+      <p>I'm currently interning as a Helpdesk Network technician at an internet service provider (ISP) in Surabaya.
+        This experience has deepened my interest, particularly in the maintenance and upkeep of Fiber to the Home (FTTH)
+        networks. I'm eager to continue learning and developing in this field, as well as contributing to maintaining
+        the stability and quality of network services.</p>
+      <div class="read-more-content">
+        <p>I'm eager to continue applying my knowledge and experience in the workplace. If there are any collaboration
+          opportunities or interesting projects related to networking, please don't hesitate to contact me.</p>
+      </div>
+      <span class="read-more-btn">Read More...</span>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="reveal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Education</div>
+        <h2>Pendidikan</h2>
+      </div>
+      <span class="chip"><i class="ri-book-open-line"></i> EDUCATION</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <b>SMK Ketintang Surabaya</b>
+        <div class="muted">Teknik Komputer & Jaringan • 2022 – 2025</div>
+        <p class="muted">Activities and society: Photography and Videography Journalist</p>
+        <p class="muted"></p>A student at SMK Ketintang Surabaya majoring in Computer and Network Engineering (TKJ), I
+        firmly believe this field is the best place to develop. I actively participate in various national-level
+        competitions, honing my technical and mental skills to compete. <br>
+        <div class="read-more-content">
+          <p class="muted">These experiences have not only enriched my knowledge but also demonstrated my dedication and
+            ability to apply my TKJ knowledge in the real world. I am passionate about continuing to learn and
+            contribute to the technology industry.</p>
+        </div>
+        <span class="read-more-btn">Read More...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Skill</div>
+        <h2>Keahlihan Utama</h2>
+      </div>
+      <span class="chip"><i class="ri-tools-line"></i> SKILL</span>
+    </div>
+    <div class="grid skills">
+      <div class="card">
+        <h3>Mikrotik</h3>
+        <p class="muted">WLAN configuration, a voucher hotspot system with Mikhmon, and VPN connections for remote
+          management. You are also proficient in routing (RIP, OSPF, and basic), firewall implementation, network
+          segmentation with VLANs, and traffic separation for bandwidth optimization.</p>
+        <div>
+          <span class="skill-tag"><i class="ri-router-line"></i> RouterOS</span>
+          <span class="skill-tag"><i class="ri-signal-wifi-line"></i> Wireless</span>
+          <span class="skill-tag"><i class="ri-shield-keyhole-line"></i> Firewall</span>
+          <span class="skill-tag"><i class="ri-base-station-line"></i> FTTH</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Arduino IDE</h3>
+        <p class="muted">Basic knowledge in developing simple prototypes using the Arduino Uno and ESP32 platforms for
+          IoT (Internet of Things) applications. Experienced in integrating various types of sensors and actuators to
+          create functional solutions.
+        <p>
+        <div>
+          <span class="skill-tag"><i class="ri-signal-wifi-line"></i>IoT</span>
+          <span class="skill-tag"><i class="ri-code-s-slash-line"></i> C/C++</span>
+          <span class="skill-tag"><i class="ri-microscope-line"></i> Prototyping</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="reveal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Experience</div>
+        <h2>Pengalaman</h2>
+      </div>
+      <span class="chip"><i class="ri-briefcase-4-line"></i> EXPERIENCE</span>
+    </div>
+    <div class="xp-list">
+      <div class="card">
+        <div class="xp-role">
+          <b>Network Helpdesk (Magang)</b>
+          <span class="tag">Juli 2025 - November 2025</span>
+        </div>
+        <div class="muted">PT. Lintas Daya Nusantara</div>
+        <p class="muted">During my internship at PT. Lintas Daya Nusantara in Surabaya, I gained hands-on experience as
+          a Network Helpdesk, focusing on Fiber to the Home (FTTH) networks. I was responsible for monitoring network
+          performance, identifying, and resolving technical issues with ONT devices. I also spent a week as a field
+          technician, which gave me a comprehensive understanding of installation and repair at customer sites. This
+          experience has deepened my understanding of network infrastructure from two perspectives, honed my ability to
+          work under pressure, and contributed to service stability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Project</div>
+        <h2>Project Portofolio</h2>
+      </div>
+      <span class="chip"><i class="ri-macbook-line"></i> PROJECT</span>
+    </div>
+    <div class="proj-grid">
+      <article class="card">
+        <img src="ASSETS/shopee.png" alt="" class="thumb" style="width: fit-content;">
+        <h3>Project 01</h3>
+        <p class="muted">I have experience developing a Shopee UI Cloning project for a school exam assignment, a
+          replica of the Shopee website's user interface. I created this project using a combination of front-end
+          technologies such as HTML, CSS, JavaScript, and Bootstrap. While it lacks back-end functionality, it
+          successfully replicates the responsive layout and visual design, and I have uploaded the source code to GitHub
+          for my portfolio.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://github.com/Crackingxcx/Shopee-Clone" aria-label="Repo Project 01"><i
+              class="ri-github-line"></i> Repo</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="ASSETS/marauder.png" alt="" class="thumb" style="width: fit-content;">
+        <h3>Project 02</h3>
+        <p class="muted">The ESP32 Marauder is an ESP32 microcontroller-based project I developed to explore and better
+          understand WiFi network security. This device is designed to perform passive network scanning, analyze data
+          packets in the air, and identify potential vulnerabilities in WiFi security systems.​This project aims to
+          provide practical insight into how the 802.11 wireless networking protocol works and the importance of using
+          strong encryption to protect personal data. Through this project, I can demonstrate how data can be exposed if
+          a network is not properly secured.</p>
+        <div class="hero-cta">
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Certification -->
+  <section id="Certification" class="reveal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Certification</div>
+        <h2>Sertifikasi</h2>
+      </div>
+      <span class="chip"><i class="ri-trophy-line"></i> Certification</span>
+    </div>
+    <div class="achv">
+      <div class="card">
+        <div class="icon"><i class="ri-book-open-line"></i></div>
+        <div>
+          <b>Network Fundamental</b>
+          <div class="muted">Aguna Course</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="ri-book-open-line"></i></div>
+        <div>
+          <b>Certificate of Completion Jaringan Komputer Dasar</b>
+          <div class="muted">ID Networkers</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="ri-book-open-line"></i></div>
+        <div>
+          <b>Certificate of Completion Basic Mikrotik</b>
+          <div class="muted">ID Networkers</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="ri-book-open-line"></i></div>
+        <div>
+          <b>Festival Inovasi dan Kewirausahaan Siswa Nasional (FIKSI)</b>
+          <div class="muted">Universitas Negeri Surabaya(unesa)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENT -->
+  <section id="achievement" class="reveal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Achievement</div>
+        <h2>Pencapaian</h2>
+      </div>
+      <span class="chip"><i class="ri-trophy-line"></i> ACHIEVEMENT</span>
+    </div>
+    <div class="achv">
+      <div class="card">
+        <div class="icon"><i class="ri-medal-2-line"></i></div>
+        <div>
+          <b>Finalis IONIC 2025</b>
+          <div class="muted">Bidang IoT • Top 10 Finalist</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="ri-vip-crown-line"></i></div>
+        <div>
+          <b>Third Place BMC Innovation</b>
+          <div class="muted">Kompetisi Business Model Canvas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Let's Work Together</h2>
+      </div>
+      <span class="chip"><i class="ri-send-plane-2-line"></i> CONTACT</span>
+    </div>
+    <div class="contact">
+      <form class="card" onsubmit="submitForm(event)" action="https://formspree.io/f/mpwjadad" method="POST">
+        <div class="field">
+          <label for="name">Nama</label>
+          <input id="name" name="name" placeholder="Nama kamu" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="email@kamu.com" required>
+        </div>
+        <div class="field">
+          <label for="message">Pesan</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tulis pesan singkat…" required></textarea>
+        </div>
+        <button class="btn primary" type="submit"><i class="ri-send-plane-line"></i> Kirim</button>
+        <p id="formStatus" class="muted" style="margin-top:10px"></p>
+      </form>
+      <div class="card info">
+        <div class="row"><i class="ri-phone-line"></i> 085187727060</div>
+        <div class="row"><i class="ri-mail-line"></i> <a
+            href="mailto:fadhilsuryap00@gmail.com">fadhilsuryap00@gmail.com</a></div>
+        <div class="row"><i class="ri-map-pin-2-line"></i> Surabaya, Indonesia</div>
+        <div class="row"><i class="ri-linkedin-box-line"></i> <a
+            href="https://www.linkedin.com/in/fadhil-surya-permadi/">LinkedIn</a></div>
+        <div class="row"><i class="ri-github-line"></i> <a href="https://github.com/Crackingxcx">GitHub</a></div>
+        <div class="row"><i class="ri-instagram-line"></i> <a
+            href="https://www.instagram.com/crackingxcx/">Instagram</a></div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <div>© <span id="year"></span> Fadhil Surya Permadi</div>
+    <a class="chip" href="#start" aria-label="Kembali ke atas"><i class="ri-arrow-up-line"></i> Back to Top</a>
+  </footer>
+  <script type="module" src="portofolio.js"></script>
+</body>
+</html>
