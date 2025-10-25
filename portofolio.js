@@ -113,31 +113,3 @@ try {
     fallback.style.objectFit = "cover";
     canvas.replaceWith(fallback);
 }
-
-// === Music Toggle Logic ===
-const musicSwitch = document.getElementById("musicSwitch");
-const bgMusic = document.getElementById("bgMusic");
-const musicContainer = document.querySelector(".music-container");
-
-bgMusic.volume = 0.6;
-
-// Saat halaman dimuat
-window.addEventListener("load", () => {
-    // Pastikan switch dalam kondisi ON
-    musicSwitch.checked = true;
-    musicContainer.classList.remove("loading");
-
-    // Coba nyalakan musik otomatis
-    bgMusic.play().catch(() => {
-        console.warn("Autoplay diblokir browser, musik akan nyala setelah interaksi user.");
-    });
-});
-
-// Toggle manual
-musicSwitch.addEventListener("change", () => {
-    if (musicSwitch.checked) {
-        bgMusic.play();
-    } else {
-        bgMusic.pause();
-    }
-});
