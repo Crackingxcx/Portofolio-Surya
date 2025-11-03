@@ -703,7 +703,7 @@
     /* Pulse network rings */
     .pulse-ring {
         position: absolute;
-        top: 50%;
+        top: 37%;
         left: 50%;
         width: 180px;
         height: 180px;
@@ -758,4 +758,5 @@
         50% {
             opacity: 1;
         }
+
     }
