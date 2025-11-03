@@ -98,8 +98,8 @@ try {
         const img = document.createElement("img");
         img.src = "ASSETS/boxes-hover.gif";
         img.alt = "3D Preview";
-        img.style.width = "100%";
-        img.style.height = "100%";
+        img.style.width = "90%";
+        img.style.height = "90%";
         img.style.objectFit = "cover";
         canvas.replaceWith(img);
     }
@@ -113,3 +113,4 @@ try {
     fallback.style.objectFit = "cover";
     canvas.replaceWith(fallback);
 }
+
