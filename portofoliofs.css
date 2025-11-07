@@ -382,7 +382,7 @@
         border-radius: 16px;
         background: linear-gradient(135deg, rgba(138, 92, 246, .3), rgba(0, 212, 255, .2));
         border: 1px solid rgba(255, 255, 255, .08);
-        margin-bottom: 12px
+        margin-bottom: 12px;
     }
 
     /* Achievements */
@@ -761,5 +761,6 @@
         }
 
     }
+
 
 
