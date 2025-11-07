@@ -14,7 +14,7 @@ document.querySelectorAll('#mobileLinks a').forEach(link => {
 });
 
 // Active link on scroll
-const sections = ['profile', 'education', 'skills', 'experience', 'projects', 'achievement', 'contact'];
+const sections = ['profile', 'education', 'skills', 'experience', 'projects', 'Certification' , 'achievement', 'contact'];
 const navLinks = [...document.querySelectorAll('#links a'), ...document.querySelectorAll('#mobileLinks a')];
 const setActive = () => {
     let current = null;
@@ -113,5 +113,6 @@ try {
     fallback.style.objectFit = "cover";
     canvas.replaceWith(fallback);
 }
+
 
 
