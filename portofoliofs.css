@@ -377,6 +377,7 @@
     }
 
     .thumb {
+        width: 100%;
         aspect-ratio: 16/10;
         border-radius: 16px;
         background: linear-gradient(135deg, rgba(138, 92, 246, .3), rgba(0, 212, 255, .2));
@@ -433,7 +434,7 @@
     /* Contact */
     .contact {
         display: grid;
-        grid-template-columns: 1.1fr .9fr;
+        grid-template-columns: .93fr .9fr;
         gap: 16px
     }
 
@@ -760,4 +761,5 @@
         }
 
     }
+
 
